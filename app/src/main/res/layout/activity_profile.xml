@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile">
+
+    <TextView
+        android:id="@+id/txtNama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="Nama"
+        android:textStyle="bold"
+        android:autoSizeTextType="uniform"
+        android:textSize="25dp"
+        android:layout_below="@id/imageView10"
+        android:textColor="@color/colorBlack"/>
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="50dp"
+        android:text="NIM "
+        android:textSize="25dp"
+        android:layout_below="@id/txtNama"/>
+
+    <TextView
+        android:id="@+id/txtNim"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txtNama"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="50dp"
+        android:text="Text1"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView13"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="15dp"
+        android:text="Angkatan"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/txtKelas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView13"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="15dp"
+        android:text="Text2"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Jurusan "
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"
+        android:layout_below="@id/textView11"/>
+
+    <TextView
+        android:id="@+id/txtJurusan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView11"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="15dp"
+        android:text="Text3"
+        android:textSize="25dp" />
+
+    <TextView
+        android:id="@+id/textView14"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:text="Jurusan "
+        android:layout_marginTop="15dp"
+        android:textSize="25dp"
+        android:layout_below="@id/textView10"/>
+
+    <TextView
+        android:id="@+id/txtTahun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView10"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="15dp"
+        android:text="Text4"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/Password"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="Ganti Password"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@id/textView10"
+        android:background="@color/colorBlue"/>
+
+    <Button
+        android:id="@+id/btnExit"
+        android:layout_width="350dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:text="Log Out"
+        android:textColor="@color/colorWhite"
+        android:layout_below="@id/Password"
+        android:background="@color/colorBlue"
+        android:onClick="Exit"/>
+
+    <ImageView
+        android:id="@+id/imageView10"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        app:srcCompat="@drawable/ic_profile"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/cardView"
+        android:layout_marginStart="120dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/colorBlue" >
+
+        <ImageView
+            android:id="@+id/imageView11"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/ic_home"
+            android:onClick="Home"/>
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Profile"
+            android:textColor="@color/colorWhite"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:textAlignment="center"/>
+    </androidx.cardview.widget.CardView>
+
+</RelativeLayout>
