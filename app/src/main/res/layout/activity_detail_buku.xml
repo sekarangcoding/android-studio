@@ -42,90 +42,143 @@
             android:textAlignment="center"/>
     </androidx.cardview.widget.CardView>
 
-    <ScrollView
+
+
+    <ImageView
+        android:id="@+id/imageView6"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="200dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="60dp"
+        app:srcCompat="@drawable/time" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical" >
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="390dp"
+        android:layout_height="wrap_content"
+        android:text="Baca Buku"
+        android:textStyle="bold"
+        android:layout_marginStart="10dp"
+        android:layout_below="@+id/imageView6"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorWhite"
+        android:background="@color/colorBlue"/>
 
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="60dp"
-                app:srcCompat="@drawable/time" />
+    <TextView
+        android:id="@+id/txtjudul"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="Judul Buku"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/button2"
+        android:autoSizeTextType="uniform"
+        android:textStyle="bold"
+        android:textColor="@color/colorBlack"/>
 
-            <Button
-                android:id="@+id/button2"
-                android:layout_width="390dp"
-                android:layout_height="wrap_content"
-                android:text="Baca Buku"
-                android:textStyle="bold"
-                android:layout_marginStart="10dp"
-                android:textColor="@color/colorWhite"
-                android:background="@color/colorBlue"/>
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Penulis :"
+        android:textSize="20dp"
+        android:layout_below="@id/txtjudul"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp" />
 
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="50dp"
-                android:text="Judul Buku"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp"
-                android:autoSizeTextType="uniform"
-                android:textStyle="bold"
-                android:textColor="@color/colorBlack"/>
+    <TextView
+        android:id="@+id/txtPenulis"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Penulis"
+        android:layout_below="@id/txtjudul"
+        android:textSize="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp" />
 
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Penulis"
-                android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp" />
+    <TextView
+        android:id="@+id/tv2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Penerbit :"
+        android:layout_below="@+id/tv1"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/txtPenerbit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Penerbit"
+        android:layout_below="@id/txtPenulis"
+        android:textSize="20dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tv3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ISBN :"
+        android:layout_below="@+id/tv2"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/txtISBN"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ISBN"
+        android:layout_below="@id/txtPenerbit"
+        android:textSize="20dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tv4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tahun Terbit :"
+        android:layout_below="@id/tv3"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/txtTahun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tahun"
+        android:layout_below="@id/txtISBN"
+        android:textSize="20dp"
+        android:layout_marginStart="140dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/tv5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File Buku :"
+        android:layout_below="@+id/tv4"
+        android:textSize="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/txtFile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="File"
+        android:layout_below="@id/txtTahun"
+        android:textSize="20dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginTop="20dp" />
 
 
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Penerbit"
-                android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp" />
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="ISBN"
-                android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp" />
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Tahun Terbit"
-                android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp" />
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="File Buku"
-                android:textSize="20dp"
-                android:layout_marginStart="10dp"
-                android:layout_marginTop="20dp" />
 
-        </LinearLayout>
-    </ScrollView>
 
 
 
