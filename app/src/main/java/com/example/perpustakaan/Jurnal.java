@@ -26,7 +26,7 @@ import java.util.HashMap;
 
 public class Jurnal extends AppCompatActivity {
 
-    private RecyclerView lvhape;
+    private RecyclerView lvjudul;
 
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
@@ -40,10 +40,10 @@ public class Jurnal extends AppCompatActivity {
         setContentView(R.layout.activity_jurnal);
         String url = "http://192.168.0.100/buku/api/jurnal.php";
 
-        lvhape = (RecyclerView) findViewById(R.id.lvhape);
+        lvjudul = (RecyclerView) findViewById(R.id.lvJudul);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        lvhape.setLayoutManager(llm);
+        lvjudul.setLayoutManager(llm);
 
         requestQueue = Volley.newRequestQueue(Jurnal.this);
 
@@ -68,7 +68,7 @@ public class Jurnal extends AppCompatActivity {
                         map.put("file_jurnal", json.getString("file_jurnal"));
                         list_data.add(map);
                         AdapterListJurnal adapter = new AdapterListJurnal(Jurnal.this, list_data);
-                        lvhape.setAdapter(adapter);
+                        lvjudul.setAdapter(adapter);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

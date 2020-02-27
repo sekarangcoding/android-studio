@@ -1,6 +1,7 @@
 package com.example.perpustakaan;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,6 +31,7 @@ public class AdapterListSkripsi extends RecyclerView.Adapter<AdapterListSkripsi.
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.txtjudul.setText(list_data.get(position).get("judul"));
+        holder.txtjudul.setTag(list_data.get(position).get("id"));
     }
 
     @Override
@@ -44,6 +46,20 @@ public class AdapterListSkripsi extends RecyclerView.Adapter<AdapterListSkripsi.
             super(itemView);
 
             txtjudul = (TextView) itemView.findViewById(R.id.txtjudul);
+            txtjudul.setOnClickListener( new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Integer pos = Integer.parseInt(txtjudul.getTag().toString())-1;
+                    Intent intent = new Intent(context, Skripsi_Detail.class);
+                    intent.putExtra("id", list_data.get(pos).get("id"));
+                    intent.putExtra("judul", list_data.get(pos).get("judul"));
+                    intent.putExtra("penulis", list_data.get(pos).get("penulis"));
+                    intent.putExtra("penerbit", list_data.get(pos).get("penerbit"));
+                    intent.putExtra("tahun_terbit", list_data.get(pos).get("tahun_terbit"));
+                    intent.putExtra("file_skripsi", list_data.get(pos).get("file_skripsi"));
+                    context.startActivity(intent);
+                }
+            });
         }
     }
 }

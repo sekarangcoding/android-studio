@@ -26,7 +26,7 @@ import java.util.HashMap;
 
 public class Skripsi extends AppCompatActivity {
 
-    private RecyclerView lvhape;
+    private RecyclerView lvjudul;
 
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
@@ -40,10 +40,10 @@ public class Skripsi extends AppCompatActivity {
         setContentView(R.layout.activity_skripsi);
         String url = "http://192.168.0.100/buku/api/skripsi.php";
 
-        lvhape = (RecyclerView) findViewById(R.id.lvhape);
+        lvjudul = (RecyclerView) findViewById(R.id.lvJudul);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        lvhape.setLayoutManager(llm);
+        lvjudul.setLayoutManager(llm);
 
         requestQueue = Volley.newRequestQueue(Skripsi.this);
 
@@ -67,7 +67,7 @@ public class Skripsi extends AppCompatActivity {
                         map.put("file_skripsi", json.getString("file_skripsi"));
                         list_data.add(map);
                         AdapterListSkripsi adapter = new AdapterListSkripsi(Skripsi.this, list_data);
-                        lvhape.setAdapter(adapter);
+                        lvjudul.setAdapter(adapter);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();

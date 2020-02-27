@@ -38,12 +38,10 @@ public class AdapterList extends RecyclerView.Adapter<AdapterList.ViewHolder>{
 
     @Override
     public int getItemCount() {
+
         return list_data.size();
     }
 
-    public void getItemCount(int position) {
-
-    }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtjudul;
@@ -54,21 +52,19 @@ public class AdapterList extends RecyclerView.Adapter<AdapterList.ViewHolder>{
             txtjudul.setOnClickListener( new View.OnClickListener() {
 
 
-//                @Override
-
-                public void onClick(View v) {
-                    //Toast.makeText(context,txtjudul.getTag().toString(),Toast.LENGTH_SHORT).show();
-                    Integer pos = Integer.parseInt(txtjudul.getTag().toString())-1;
-                    Intent intent = new Intent(context, DetailBuku.class);
-                      intent.putExtra("id", list_data.get(pos).get("id"));
-                      intent.putExtra("judul", list_data.get(pos).get("judul"));
-                      intent.putExtra("penulis", list_data.get(pos).get("penulis"));
-                      intent.putExtra("penerbit", list_data.get(pos).get("penerbit"));
-                      intent.putExtra("tahun_terbit", list_data.get(pos).get("tahun_terbit"));
-                      intent.putExtra("isbn", list_data.get(pos).get("isbn"));
-                      intent.putExtra("file_buku", list_data.get(pos).get("file_buku"));
-                      context.startActivity(intent);
-                }
+            @Override
+            public void onClick(View v) {
+                Integer pos = Integer.parseInt(txtjudul.getTag().toString())-1;
+                Intent intent = new Intent(context, DetailBuku.class);
+                intent.putExtra("id", list_data.get(pos).get("id"));
+                intent.putExtra("judul", list_data.get(pos).get("judul"));
+                intent.putExtra("penulis", list_data.get(pos).get("penulis"));
+                intent.putExtra("penerbit", list_data.get(pos).get("penerbit"));
+                intent.putExtra("tahun_terbit", list_data.get(pos).get("tahun_terbit"));
+                intent.putExtra("isbn", list_data.get(pos).get("isbn"));
+                intent.putExtra("file_buku", list_data.get(pos).get("file_buku"));
+                context.startActivity(intent);
+            }
             });
         }
     }

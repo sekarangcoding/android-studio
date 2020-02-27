@@ -32,13 +32,11 @@ public class DetailBuku extends AppCompatActivity {
         tv4.setText(getIntent().getStringExtra("isbn"));
         tv5.setText(getIntent().getStringExtra("tahun_terbit"));
         tv6.setText(getIntent().getStringExtra("file_buku"));
-
     }
 
     public void Search(View v) {
         Intent intent = new Intent(DetailBuku.this, Buku.class);
         startActivity(intent);
-
     }
 
     public void Home(View v) {

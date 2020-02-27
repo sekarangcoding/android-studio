@@ -44,13 +44,15 @@
         android:layout_below="@id/cardView1"/>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/lvhape"
+        android:id="@+id/lvJudul"
         android:layout_marginTop="100dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true" />
+        android:layout_alignParentTop="true"
+        android:onClick="lvhape"
+        tools:ignore="OnClick"/>
 
 
 

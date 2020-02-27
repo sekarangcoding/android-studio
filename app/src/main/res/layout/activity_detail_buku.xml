@@ -59,8 +59,9 @@
         android:layout_height="wrap_content"
         android:text="Baca Buku"
         android:textStyle="bold"
-        android:layout_marginStart="10dp"
+        android:layout_centerHorizontal="true"
         android:layout_below="@+id/imageView6"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:textColor="@color/colorWhite"
         android:background="@color/colorBlue"/>
@@ -158,32 +159,13 @@
         android:layout_marginTop="20dp" />
 
     <TextView
-        android:id="@+id/tv5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="File Buku :"
-        android:layout_below="@+id/tv4"
-        android:textSize="20dp"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="20dp" />
-
-    <TextView
         android:id="@+id/txtFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="File"
-        android:layout_below="@id/txtTahun"
+        android:layout_below="@id/tv4"
         android:textSize="20dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginTop="20dp" />
-
-
-
-
-
-
-
-
-
-
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:visibility="invisible"/>
 </RelativeLayout>

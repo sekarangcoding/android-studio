@@ -6,13 +6,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.BaseAdapter;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.TextView;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -31,30 +29,25 @@ import java.util.HashMap;
 
 public class Buku extends AppCompatActivity {
 
-    private RecyclerView lvhape;
-
+    private RecyclerView lvjudul;
     private RequestQueue requestQueue;
     private StringRequest stringRequest;
+    EditText editText;
 
     ArrayList<HashMap<String, String>> list_data;
-
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_buku);
 
-        //ListView listView=findViewById(R.id.lvhape);
-
-
         String url = "http://192.168.0.100/buku/api/buku.php";
 
-        lvhape = (RecyclerView) findViewById(R.id.lvhape);
+        editText = findViewById(R.id.txtSearch);
+        lvjudul = (RecyclerView) findViewById(R.id.lvjudul);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         llm.setOrientation(LinearLayoutManager.VERTICAL);
-        lvhape.setLayoutManager(llm);
+        lvjudul.setLayoutManager(llm);
 
         requestQueue = Volley.newRequestQueue(Buku.this);
 
@@ -79,7 +72,7 @@ public class Buku extends AppCompatActivity {
                         map.put("file_buku", json.getString("file_buku"));
                         list_data.add(map);
                         AdapterList adapter = new AdapterList(Buku.this, list_data);
-                        lvhape.setAdapter(adapter);
+                        lvjudul.setAdapter(adapter);
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -99,6 +92,4 @@ public class Buku extends AppCompatActivity {
         Intent intent = new Intent(Buku.this, MainActivity.class);
         startActivity(intent);
     }
-
-
 }

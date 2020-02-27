@@ -15,7 +15,7 @@ public class Koneksi {
 
     private static Koneksi mInstance;
     private RequestQueue mRequestQueue;
-    private Context mCtx;
+    private static Context mCtx;
 
     public Koneksi (Context mCtx) {
         this.mCtx = mCtx;

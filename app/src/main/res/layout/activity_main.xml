@@ -12,8 +12,8 @@
         android:id="@+id/imageView2"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="140dp"
         app:srcCompat="@drawable/buku"
         android:onClick="Buku"/>
 
@@ -22,7 +22,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginStart="190dp"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="140dp"
         app:srcCompat="@drawable/skripsi"
         android:onClick="Skripsi"/>
 
@@ -30,8 +30,8 @@
         android:id="@+id/imageView4"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/imageView2"
         app:srcCompat="@drawable/jurnal"
         android:onClick="Jurnal"/>
@@ -41,7 +41,7 @@
         android:layout_width="200dp"
         android:layout_height="200dp"
         android:layout_marginStart="190dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_below="@id/imageView3"
         app:srcCompat="@drawable/profil"
         android:onClick="Profile"/>
