@@ -1,48 +1,42 @@
 package com.example.perpustakaan;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
 public class SharedPrefManager {
-    public static final String SP_MAHASISWA_APP = "spMahasiswaApp";
+    private static final String SP_NAME_APP = "spNameApp";
 
-    public static final String SP_USERNAME = "spUsername";
-    public static final String SP_NAMA = "spNama";
 
     public static final String SP_SUDAH_LOGIN = "spSudahLogin";
+    public static final String SP_TOKEN = "token";
 
-    SharedPreferences sp;
-    SharedPreferences.Editor spEditor;
 
-    public SharedPrefManager(Context context){
-        sp = context.getSharedPreferences(SP_MAHASISWA_APP, Context.MODE_PRIVATE);
+    private SharedPreferences sp;
+    private SharedPreferences.Editor spEditor;
+
+    @SuppressLint("CommitPrefEdits")
+    public SharedPrefManager(Context context) {
+        sp = context.getSharedPreferences(SP_NAME_APP, Context.MODE_PRIVATE);
         spEditor = sp.edit();
     }
 
-    public void saveSPString(String keySP, String value){
+
+    public void saveToken(String keySP, String value) {
         spEditor.putString(keySP, value);
         spEditor.commit();
     }
 
-    public void saveSPInt(String keySP, int value){
-        spEditor.putInt(keySP, value);
-        spEditor.commit();
-    }
-
-    public void saveSPBoolean(String keySP, boolean value){
+    public void saveSPBoolean(String keySP, boolean value) {
         spEditor.putBoolean(keySP, value);
         spEditor.commit();
     }
 
-    public String getSpUsername(){
-        return sp.getString(SP_USERNAME, "");
-    }
+    public Boolean getSPSudahLogin() {
 
-    public String getSpNama(){
-        return sp.getString(SP_NAMA, "");
-    }
-
-    public Boolean getSPSudahLogin(){
         return sp.getBoolean(SP_SUDAH_LOGIN, false);
+    }
+    public String getSpToken() {
+        return sp.getString(SP_TOKEN, "token");
     }
 }

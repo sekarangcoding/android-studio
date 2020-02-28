@@ -6,8 +6,10 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.session.MediaSession;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,15 +30,10 @@ import org.json.JSONObject;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static com.example.perpustakaan.SessionManager.kunci_nama;
-import static com.example.perpustakaan.SessionManager.kunci_username;
-
 public class Login extends AppCompatActivity {
 
     EditText user, pass;
     Button login;
-    SessionManager sessionManager;
     SharedPrefManager sharedPrefManager;
 
 
@@ -48,8 +45,6 @@ public class Login extends AppCompatActivity {
         user = findViewById(R.id.Username);
         pass = findViewById(R.id.Password);
         login = findViewById(R.id.button);
-        sessionManager = new SessionManager(getApplicationContext());
-        sharedPrefManager = new SharedPrefManager(this);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,11 +54,6 @@ public class Login extends AppCompatActivity {
             }
         });
 
-//        if (sharedPrefManager.getSPSudahLogin()) {
-//            startActivity(new Intent(Login.this, MainActivity.class)
-//                    .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK));
-//            finish();
-//        }
     }
 
 
@@ -76,39 +66,39 @@ public class Login extends AppCompatActivity {
                             JSONObject json = new JSONObject(response);
                             // Mengambil variable status pada response
                             String status = json.getString("status");
-                            if (status.equals("success")) {
+                            if(status.equals("success")){
 
-//                                String nim = json.getJSONObject("username").getString("username");
-//                                String nama = json.getJSONObject("nama").getString("nama");
-
-                                //create session
-//                                sessionManager.createSession(user.getText());
-
-//                                sessionManager =
-//                                sharedPrefManager.saveSPString(SharedPrefManager.SP_USERNAME, nim);
-//                                sharedPrefManager.saveSPString(SharedPrefManager.SP_NAMA, nama);
+//                                String token = sharedPrefManager.getSpToken();
+////                                Log.d("tes", token.getToken());
+//
+//                                sharedPrefManager.saveToken(SharedPrefManager.SP_TOKEN, token);
+//                                sharedPrefManager.getSpToken();
+////                                Log.d("token", sharedPrefManager.getSpToken());
+//
+//
 //                                sharedPrefManager.saveSPBoolean(SharedPrefManager.SP_SUDAH_LOGIN, true);
 
                                 // Jika Login Sukses Maka pindah ke activity lain.
                                 Intent intent = new Intent(Login.this, MainActivity.class);
                                 startActivity(intent);
                                 finish();
-                            } else {
+                            }
+                            else{
                                 Toast.makeText(getApplicationContext(), "Username & Password Salah", Toast.LENGTH_LONG).show();
                             }
                         } catch (JSONException e) {
 //                            e.printStackTrace();
-                            Toast.makeText(Login.this, "Error " + e.toString(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, "Error " +e.toString(),Toast.LENGTH_SHORT).show();
                         }
                     }
-                }, new Response.ErrorListener() {
+                },new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
                 Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
 
             }
         }
-        ) {
+        ){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
                 HashMap<String, String> params = new HashMap<>();
